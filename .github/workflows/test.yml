@@ -18,5 +18,8 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install deps
+        run: npm install --dev
+
       - name: Run tests
         run: npm test
