@@ -1,3 +1,4 @@
+#!/bin/env node
 const { convert } = require("./convert");
 
 const main = async () => {
