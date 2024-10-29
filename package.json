@@ -1,6 +1,6 @@
 {
   "name": "osv2gitlab",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert osv-scanner report JSON to GitLab dependency scanner report format",
   "main": "index.js",
   "bin": "index.js",
