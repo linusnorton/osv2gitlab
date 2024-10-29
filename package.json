@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js report.json | npx ajv test -s schema.json"
+    "test": "npm install -g ajv-cli && node index.js report.json > output.json && npx ajv --strict=false -s schema.json -d output.json"
   },
   "private": false
 }
