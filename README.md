@@ -5,7 +5,7 @@ Script to convert [osv-scanner](https://www.osv.dev) output to a GitLab [depende
 ## Usage
 
 ```bash
-$ osv-scanner --format json | npx -q osv2gitlab > gl-dependency-scanning.json
+$ osv-scanner --format json . | npx -q osv2gitlab > gl-dependency-scanning.json
 ```
 
 ## Contributing

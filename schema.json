@@ -1,4 +1,4 @@
- {
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/dependency-scanning-report-format.json",
   "title": "Report format for GitLab Dependency Scanning",
@@ -469,9 +469,6 @@
       ]
     }
   },
-  "self": {
-    "version": "15.2.1"
-  },
   "type": "object",
   "required": [
     "scan",
@@ -723,9 +720,7 @@
         "type": {
           "type": "string",
           "description": "Type of the scan.",
-          "enum": [
-            "dependency_scanning"
-          ]
+          "const": "dependency_scanning"
         },
         "primary_identifiers": {
           "type": "array",
@@ -1050,9 +1045,7 @@
                   "type": "string",
                   "minLength": 1,
                   "description": "Result of the scan.",
-                  "enum": [
-                    "flagged-as-likely-false-positive"
-                  ]
+                  "const": "flagged-as-likely-false-positive"
                 },
                 "origin": {
                   "minLength": 1,

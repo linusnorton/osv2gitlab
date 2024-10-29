@@ -9,7 +9,12 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js report.json | npx ajv test -s schema.json"
+    "test:run": "cat report.json | node index.js > output.json",
+    "test:validate":  "ajv --strict=false -s schema.json -d output.json",
+    "test": "npm run test:run && npm run test:validate"
   },
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
+  }
 }

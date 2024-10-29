@@ -3,7 +3,7 @@ name: Run Tests
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   test:
@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      - name: Install deps
+        run: npm install --dev
 
       - name: Run tests
         run: npm test
