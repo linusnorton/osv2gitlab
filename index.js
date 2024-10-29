@@ -7,12 +7,13 @@ const main = async () => {
 
   try {
     const json = JSON.parse(input);
+    console.log(JSON.stringify(convert(json), null, 2));
   } catch (error) {
+    console.log("Could not read input");
     console.error(input);
     throw error;
   }
 
-  console.log(JSON.stringify(convert(json), null, 2));
 }
 
 const readFromFile = () => {
