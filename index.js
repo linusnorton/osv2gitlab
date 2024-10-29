@@ -5,8 +5,12 @@ const main = async () => {
     ? readFromFile()
     : await readFromPipe();
 
-  console.error(input);
-  const json = JSON.parse(input);
+  try {
+    const json = JSON.parse(input);
+  } catch (error) {
+    console.error(input);
+    throw error;
+  }
 
   console.log(JSON.stringify(convert(json), null, 2));
 }
