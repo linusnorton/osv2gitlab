@@ -1,0 +1,15 @@
+{
+  "name": "osv2gitlab",
+  "version": "1.0.0",
+  "description": "Convert osv-scanner report JSON to GitLab dependency scanner report format",
+  "main": "index.js",
+  "bin": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js report.json | npx ajv test -s schema.json"
+  },
+  "private": false
+}
