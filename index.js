@@ -9,9 +9,7 @@ const main = async () => {
     const json = JSON.parse(input);
     console.log(JSON.stringify(convert(json), null, 2));
   } catch (error) {
-    console.log("Could not read input");
-    console.error(input);
-    throw error;
+    throw new Error("Could not read input: " + input);
   }
 
 }
