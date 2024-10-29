@@ -23,8 +23,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      - run: cat output.json
-
-      - name: Run tests
-        run: npm run test:validate

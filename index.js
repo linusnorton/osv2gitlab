@@ -5,6 +5,7 @@ const main = async () => {
     ? readFromFile()
     : await readFromPipe();
 
+  console.error(input);
   const json = JSON.parse(input);
 
   console.log(JSON.stringify(convert(json), null, 2));
