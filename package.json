@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Convert osv-scanner report JSON to GitLab dependency scanner report format",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": "node index.js",
   "engines": {
     "node": ">=18.0.0"
   },
