@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js ./report.json > output.json && cat output.json && ajv --strict=false -s schema.json -d output.json"
+    "test": "node index.js ./report.json > output.json",
+    "test:validate":  "ajv --strict=false -s schema.json -d output.json",
+    "test:all": "npm test && npm run test:validate"
   },
   "private": false,
   "devDependencies": {
