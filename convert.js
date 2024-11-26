@@ -1,7 +1,7 @@
 const convert = (input) => {
   const vulnerabilities = input.results?.flatMap(convertVulnerabilities) || [];
 
-  return {
+  return JSON.stringify({
     version: "15.2.1",
     schema: "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v15.0.6/dist/dependency-scanning-report-format.json?ref_type=tags",
     scan: {
@@ -29,7 +29,7 @@ const convert = (input) => {
       type: "dependency_scanning",
     },
     vulnerabilities
-  };
+  }, null, 2);
 }
 
 const convertVulnerabilities = (input) => {
@@ -71,4 +71,4 @@ const mapSeverity = (string) => {
   return formatted === "Moderate" ? "Medium" : formatted;
 }
 
-module.exports = { convert };
+module.exports = { convert, mapSeverity };

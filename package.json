@@ -9,12 +9,16 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test:run": "cat report.json | node index.js > output.json",
-    "test:validate": "ajv --strict=false -s schema.json -d output.json",
-    "test": "npm run test:run && npm run test:validate"
+    "test:run:json": "cat report.json | node index.js > output.json",
+    "test:validate:json": "ajv --strict=false -s schema.json -d output.json",
+    "test:run:junit": "cat report.json | node index.js --format=junit > output.xml",
+    "test:validate:junit": "fxparser output.xml",
+    "test": "npm run test:run:json && npm run test:validate:json && npm run test:run:junit && npm run test:validate:junit"
   },
   "private": false,
   "devDependencies": {
-    "ajv-cli": "^5.0.0"
-  }
+    "ajv-cli": "^5.0.0",
+    "fast-xml-parser": "^4.5.0"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
